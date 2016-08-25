@@ -1,0 +1,240 @@
+// Main Style
+// For all pages
+
+.expanded .row {max-width: $global-width;}
+
+a {transition:all 0.1s ease-in-out;}
+
+
+@mixin soical-icon($tb-background, $icon-width-height: 48px, $icon-font-size: 2rem) {
+    background-color:$tb-background;
+    color: #FFF;
+    display: inline-block;
+    width: $icon-width-height;
+    height: $icon-width-height;
+    padding:$icon-width-height/5;
+    font-size:$icon-font-size;
+    margin: 0 $icon-font-size/4 0 0;
+    &:hover {background-color:lighten($tb-background, 10);}
+}
+
+
+
+
+@for $i from 1 through 10 {
+    .img-#{$i}0 {width: $i*10+%; max-width: $i*10+%;}
+
+    @include breakpoint(large) {
+        .img-#{$i}0 {width: $i*12+%; max-width: $i*12+%;}
+    }    
+
+    @include breakpoint(medium down) {
+        .img-#{$i}0 {width: $i*10+%; max-width: $i*10+%;}
+    }    
+
+}
+
+$list: padding margin;
+@mixin padding-AND-margin ($PaddingMargin, $i, $size) {
+
+    .#{$PaddingMargin}-#{$i} {#{$PaddingMargin}: $size+rem;}
+    .#{$PaddingMargin}Top-#{$i} {#{$PaddingMargin}-top: $size+rem;}    
+    .#{$PaddingMargin}Right-#{$i} {#{$PaddingMargin}-right: $size+rem;}    
+    .#{$PaddingMargin}Bottom-#{$i} {#{$PaddingMargin}-bottom: $size+rem;}    
+    .#{$PaddingMargin}Left-#{$i} {#{$PaddingMargin}-left: $size+rem;}    
+    .#{$PaddingMargin}TopBottom-#{$i} {#{$PaddingMargin}-top: $size+rem; #{$PaddingMargin}-bottom: $size+rem;}    
+    .#{$PaddingMargin}RightLeft-#{$i} {#{$PaddingMargin}-right: $size+rem; #{$PaddingMargin}-left: $size+rem;}
+
+}
+
+@for $i from 1 through 10 {
+
+    @each $PaddingMargin in $list {
+        @include padding-AND-margin($PaddingMargin, $i, $i);
+    }
+    @include breakpoint(medium down) {
+        @each $PaddingMargin in $list {
+            @include padding-AND-margin($PaddingMargin, $i, $i/4);
+        }
+    }
+    
+}
+
+.padding-off {padding:0;}
+.margin-off {margin:0;}
+
+
+@for $i from 1 through 10 {
+    .font-size-#{$i} {
+        font-size: $i+rem;
+    }    
+
+}
+
+.wrapper-frame {
+    background-color: #222;
+    position: fixed;
+    left: 3vw;
+    width: calc( 100% - 6vw );
+    height: 3vw;
+    z-index: 10;
+    @include breakpoint(medium down) {
+        left: 1vw;
+        width: calc( 100% - 2vw );
+        height: 1vw;
+    }
+    &.top {top: 0;}
+    &.bottom {bottom: 0;}
+}
+
+.wrapper {
+    background-color: #222;
+    width: calc( 100% - 6vw );
+    height: 100%;
+    margin: 0 auto;
+    padding: 3vw 0;
+    padding-top: calc( 100vh - 1.5vw );
+        @include breakpoint(medium down) {
+            width: calc( 100% - 2vw );
+            padding: 1vw 0;
+            padding-top: calc( 100vh - 0.5vw );
+        }
+}
+
+#header {
+    position: fixed;
+    top: 3vw;
+    left:0;
+    right: 0;
+    width: calc( 100% - 6vw );
+    height: calc( 100vh - 6vw );
+    overflow: hidden;
+    z-index: 0;
+    @include breakpoint(medium down) {
+        width: calc( 100% - 2vw );
+        height: calc( 100vh - 2vw );
+        p {font-size: 0.9rem;}
+
+    }
+
+    .myname {
+        font-weight: 700;
+        color: #FFF;
+        @include breakpoint(medium down) {
+            font-size: 2rem;
+            color: #FFFDDD;
+        }
+
+    }
+    .jobtitle {
+        @include breakpoint(medium down) {
+        font-size: 1.2rem;
+        color: #DDD;
+        }
+    }
+    ul.links {
+        margin: 0;
+        li {
+            list-style: none;
+            float: left;
+
+            a.socicon[href*="github.com"] {@include soical-icon(#FDA000, 32px, 1.2rem);}
+            a.socicon[href*="twitter.com"] {@include soical-icon(#0087CB, 32px, 1.2rem);}
+            a.socicon[href*="saderi.com"] {@include soical-icon(#D82F44, 32px, 1.2rem);}
+        }
+
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.title-and-time {
+    .columns {
+        margin-bottom: 3rem;
+        padding: 0;
+        position: relative;
+        .name {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .timeperiod {
+            font-size: 0.80rem;
+            color: #949494;
+        }
+    }  
+}
+    @include breakpoint(medium down) {
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }  
+    }
+
+#skills {background-color: lighten(#222, 5%);}
+#work-experience  {
+    background-color: lighten(#222, 7%);
+    .title-and-time {
+        @extend .title-and-time;
+    }
+
+} 
+
+#volunteer-activities  {
+    background-color: lighten(#222, 9%);
+    .title-and-time {
+        @extend .title-and-time;
+    }
+} 
+
+#contact-me  {
+    background-color: lighten(#222, 11%);
+} 
+
+#footer  {
+    background-color: #222;
+} 
+
+.Skills-Explained {
+    p {
+        color: #AAA;
+    }
+}
+
+hr.lighten {
+    border: 1px dashed $dark-gray;
+    margin:1rem;
+}
+
+.avatar {
+    background-image: url('../img/panda.jpg');
+    background-size: cover;
+    img {
+        transition:opacity 0.5s ease-in-out;
+        opacity: 1;
+    }
+    &:hover {
+        img {
+            opacity: 0;
+        }
+    }
+}
+
+
+.scrolling {
+        position: absolute;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        color: #949494;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 300px;
+        height: 35px;
+        display: block;
+        margin: auto;
+        content: " ";
+}
+
