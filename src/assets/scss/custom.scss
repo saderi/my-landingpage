@@ -214,6 +214,7 @@ hr.lighten {
     img {
         transition:opacity 0.5s ease-in-out;
         opacity: 1;
+        min-width: 100%;
     }
     &:hover {
         img {
