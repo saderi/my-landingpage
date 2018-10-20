@@ -132,18 +132,6 @@ $list: padding margin;
         color: #DDD;
         }
     }
-    ul.links {
-        margin: 0;
-        li {
-            list-style: none;
-            float: left;
-
-            a.socicon[href*="github.com"] {@include soical-icon(#FDA000, 32px, 1.2rem);}
-            a.socicon[href*="twitter.com"] {@include soical-icon(#0087CB, 32px, 1.2rem);}
-            a.socicon[href*="saderi.com"] {@include soical-icon(#D82F44, 32px, 1.2rem);}
-        }
-
-    }
 }
 
 .content {
@@ -239,3 +227,32 @@ hr.lighten {
         content: " ";
 }
 
+ul.links {
+    margin: 0 0 1rem 0;
+    li {
+        list-style: none;
+        display: inline-block;
+        a.socicon[href*="github.com"] {@include soical-icon(#c9510c, 32px, 1.2rem);}
+        a.socicon[href*="twitter.com"] {@include soical-icon(#0087CB, 32px, 1.2rem);}
+        a.socicon[href*="linkedin.com"] {@include soical-icon(#2C61B9, 32px, 1.2rem);}
+        a.socicon[href*="saderi.com"] {@include soical-icon(#D82F44, 32px, 1.2rem);}
+    }
+}
+
+
+#section {
+    position: relative;
+    span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-45deg);
+        animation: 1.5s infinite;
+        box-sizing: border-box;
+    }
+}
