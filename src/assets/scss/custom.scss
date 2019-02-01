@@ -232,10 +232,11 @@ ul.links {
     li {
         list-style: none;
         display: inline-block;
-        a.socicon[href*="github.com"] {@include soical-icon(#c9510c, 32px, 1.2rem);}
-        a.socicon[href*="twitter.com"] {@include soical-icon(#0087CB, 32px, 1.2rem);}
-        a.socicon[href*="linkedin.com"] {@include soical-icon(#2C61B9, 32px, 1.2rem);}
-        a.socicon[href*="saderi.com"] {@include soical-icon(#D82F44, 32px, 1.2rem);}
+        a.socicon i[class*="github"] {@include soical-icon(#f1502f, 32px, 1.2rem);}
+        a.socicon i[class*="twitter"] {@include soical-icon(#4da7de, 32px, 1.2rem);}
+        a.socicon i[class*="linkedin"] {@include soical-icon(#3371b7, 32px, 1.2rem);}
+        a.socicon i[class*="wordpress"] {@include soical-icon(#464646, 32px, 1.2rem);}
+        a.socicon i[class*="youtube"] {@include soical-icon(#e02a20, 32px, 1.2rem);}
     }
 }
 

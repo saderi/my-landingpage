@@ -1,16 +1,15 @@
-@charset "UTF-8";
-
 @font-face {
-  font-family: "socicon";
-  src:url("../fonts/icons/socicon.eot");
-  src:url("../fonts/icons/socicon.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/icons/socicon.woff") format("woff"),
-    url("../fonts/icons/socicon.ttf") format("truetype"),
-    url("../fonts/icons/socicon.svg#socicon") format("svg");
+  font-family: 'Socicon';
+  src:  url('../fonts/icons/Socicon.eot?484r1f');
+  src:  url('../fonts/icons/Socicon.eot?484r1f#iefix') format('embedded-opentype'),
+    url('../fonts/icons/Socicon.woff2?484r1f') format('woff2'),
+    url('../fonts/icons/Socicon.ttf?484r1f') format('truetype'),
+    url('../fonts/icons/Socicon.woff?484r1f') format('woff'),
+    url('../fonts/icons/Socicon.svg?484r1f#Socicon') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
+
 
 [data-icon]:before {
   font-family: "socicon" !important;
@@ -38,14 +37,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .socicon-github:before {
-  content: "\e030";
+  content: "\e032";
 }
 .socicon-twitter:before {
-  content: "\e040";
+  content: "\e08d";
 }
 .socicon-wordpress:before {
-  content: "\e058";
+  content: "\e09c";
 }
 .socicon-linkedin:before {
-  content: "\e049";
+  content: "\e04c";
+}
+.socicon-youtube:before {
+  content: "\e0a5";
 }
