@@ -1,28 +1,6 @@
 language: node_js
-cache: yarn
-
-os:
-  - linux
-
-node_js:
-  - 8
-  - 10
-  - node
-
-env:
-  global:
-    - YARN_GPG=no
-  matrix:
-    - ZF_TRAVIS_COMMAND=test
-
-matrix:
-  include:
-    - os: linux
-      node_js: stable
-      env: ZF_TRAVIS_COMMAND=test
-
-install: yarn --network-timeout 1000000
-script: yarn run $ZF_TRAVIS_COMMAND
-
-notifications:
-  email: false
+install:
+  - npm install
+  - bower install
+script:
+  - npm run build
