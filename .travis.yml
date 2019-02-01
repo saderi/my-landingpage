@@ -1,3 +1,5 @@
+before_install:
+  - sudo apt-get install -y lftp
 language: node_js
 node_js:
   - '8'
