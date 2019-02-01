@@ -19,7 +19,7 @@ matrix:
   include:
     - os: linux
       node_js: stable
-      env: ZF_TRAVIS_COMMAND=test:javascript:browserstack
+      env: ZF_TRAVIS_COMMAND=test
 
 install: yarn --network-timeout 1000000
 script: yarn run $ZF_TRAVIS_COMMAND
