@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 set -e
-echo 'set ssl:verify-certificate off;' > ~/.lftprc
-echo 'set ftp:ssl-allow off;' >> ~/.lftprc
+echo 'set ssl:verify-certificate off;' >> /etc/lftp.conf
+echo 'set ftp:ssl-allow off;' >> /etc/lftp.conf
 
 LOCALPATH='./dist'
 REMOTEPATH='/public_html'
-lftp -f "
-open ftp://$FTP_HOST
-user $FTP_USER $FTP_PASSWORD
-mirror --continue --reverse $LOCALPATH $REMOTEPATH
-bye
-" 
 
+lftp -u ${FTP_USER},${FTP_PASSWORD} ${FTP_HOST} << EOF
+mirror --continue --reverse ${LOCALPATH} ${REMOTEPATH}
+bye
+EOF
