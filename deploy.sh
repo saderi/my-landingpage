@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
-echo 'set ssl:verify-certificate off;' >> /etc/lftp.conf
-echo 'set ftp:ssl-allow off;' >> /etc/lftp.conf
+echo 'set ssl:verify-certificate off;' > ~/.lftprc
+echo 'set ftp:ssl-allow off;' >> ~/.lftprc
 
 LOCALPATH='./dist'
 REMOTEPATH='/public_html'
