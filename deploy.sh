@@ -7,6 +7,6 @@ LOCALPATH='./dist'
 REMOTEPATH='/public_html/test'
 
 lftp -u ${FTP_USER},${FTP_PASSWORD} ${FTP_HOST} << EOF
-mirror --continue --reverse ${LOCALPATH} ${REMOTEPATH}
+mirror --continue --reverse --ascii ${LOCALPATH} ${REMOTEPATH}
 bye
 EOF
