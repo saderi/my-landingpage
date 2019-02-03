@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-# define SERVER_WEBDISK in travis Environment Variables 
-# define HOST_USERNAME in travis Environment Variables 
-# define HOST_PASSWORD in travis Environment Variables 
+# Define SERVER_WEBDISK in travis Environment Variables 
+# Define HOST_USERNAME in travis Environment Variables 
+# Define HOST_PASSWORD in travis Environment Variables 
 
 LOCALPATH='./dist'
 REMOTEPATH='/public_html'
@@ -12,12 +12,12 @@ mapfile -t DIR_LIST < <(tree -ifp --noreport $LOCALPATH)
 for (( i=1; i<${#DIR_LIST[@]}; i++ ));
 do 
     if [ ${DIR_LIST[i]:1:1} = 'd' ]; then
-        # Create Directorys
+        # Create folders
         DIR_PATH=$(echo ${DIR_LIST[i]} | awk {'print $2'})
         DIR_NAME=${DIR_PATH#"$LOCALPATH"}
         curl -u $HOST_USERNAME:$HOST_PASSWORD -X MKCOL "$SERVER_WEBDISK$REMOTEPATH$DIR_NAME" >/dev/null 2>&1
     else
-        # Upload file
+        # Upload files
         LOCAL_FILE_PATH=$(echo ${DIR_LIST[i]} | awk {'print $2'})
         FILE_PATH=${LOCAL_FILE_PATH#"$LOCALPATH"}
         mapfile -t FILE_PATH_LIST < <(echo $FILE_PATH | tr "/" "\n")
