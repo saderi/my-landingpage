@@ -92,11 +92,9 @@ $list: padding margin;
     width: calc( 100% - 6vw );
     height: 100%;
     margin: 0 auto;
-    padding: 3vw 0;
     padding-top: calc( 100vh - 1.5vw );
         @include breakpoint(medium down) {
             width: calc( 100% - 2vw );
-            padding: 1vw 0;
             padding-top: calc( 100vh - 0.5vw );
         }
 }
@@ -106,9 +104,6 @@ $list: padding margin;
     top: 3vw;
     left:0;
     right: 0;
-    width: calc( 100% - 6vw );
-    height: calc( 100vh - 6vw );
-    overflow: hidden;
     z-index: 0;
     @include breakpoint(medium down) {
         width: calc( 100% - 2vw );
